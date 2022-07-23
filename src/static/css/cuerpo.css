@@ -92,9 +92,32 @@ form > .enviarImg{
     flex-wrap: wrap;
 }
 
-.photo-container > img{
+.img-container{
+    width: 200px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    box-shadow: 0 0 7px black;
+    border-radius: 12px;
+    transition: 0.3s all ease;
+}
+
+.img-container:hover{
+    transform: scale(1.08);
+}
+
+.img-info{
+    padding-top: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container > img{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     width: 200px;
     height: 200px;
-    margin: 5px;
     object-fit: cover;
 }

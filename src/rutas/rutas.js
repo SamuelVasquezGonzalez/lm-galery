@@ -41,7 +41,6 @@ app.post('/imagenes', upload.single('img'), async (req, res)=>{
     img_ruta: resultado.url,
     propietario: `@${req.session.usuario.username}`
   });
-  console.log(resultado)
   res.redirect('imagenes');
 })
 
@@ -55,7 +54,6 @@ app.get('/imagenes', (req, res)=>{
         img: result,
         propietario: result
       });
-      console.log(req.file)
     }
   });
 });
