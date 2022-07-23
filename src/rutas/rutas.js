@@ -2,10 +2,17 @@ const app = require("../config/servidor");
 const mysqlConnections = require("../config/db");
 const mimeTypes = require('mime-types');
 const multer = require('multer');
+const cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: "lm-galery",
+  api_key: "364494937687428",
+  api_secret: "nPY-_rxEVDepShph09_hXE9M3vs"
+
+})
 require('colors')
 
 const storage = multer.diskStorage({
-    destination: 'src/static/subidas',
+    destination: 'src/static/uploads',
     filename: function (req, file, cb) {
       cb("", Date.now() + "." + mimeTypes.extension(file.mimetype))
     }
@@ -28,12 +35,13 @@ app.post('/u', (req, res)=>{
     res.redirect('/enviar');
 });
 
-app.post('/imagenes', upload.single('img'), (req, res)=>{
+app.post('/imagenes', upload.single('img'), async (req, res)=>{
+  const resultado = await cloudinary.v2.uploader.upload(req.file.path);
   mysqlConnections.query("INSERT INTO imgs SET?",{
-    img_ruta: `subidas/${req.file.filename}`,
+    img_ruta: resultado.url,
     propietario: `@${req.session.usuario.username}`
   });
-  console.log(req.file)
+  console.log(resultado)
   res.redirect('imagenes');
 })
 
@@ -47,7 +55,6 @@ app.get('/imagenes', (req, res)=>{
         img: result,
         propietario: result
       });
-      console.log(result)
       console.log(req.file)
     }
   });
