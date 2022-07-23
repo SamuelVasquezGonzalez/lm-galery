@@ -24,12 +24,7 @@ app.get('/enviar', (req, res)=>{
 });
 
 app.post('/u', (req, res)=>{
-    req.session.usuario;
-    if(req.body){
-      req.session.usuario = req.body
-    }else{
-      req.session.usuario = 'Usuario'
-    }
+    req.session.usuario = req.body
     res.redirect('/enviar');
 });
 
