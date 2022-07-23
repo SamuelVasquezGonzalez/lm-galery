@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/cuerpo.css">
+    <title>Inicio | LM-galery</title>
+</head>
+<body>
+    <header>
+        <h1>LM Galery</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/imagenes">Imagenes</a></li>
+                <li><a href="/enviar">Enviar Imagenes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="form">
+                <form method="post" enctype="application/x-www-form-urlencoded" action="/u" class="usuario">
+                    <h2>Bienvenido</h2>
+                    <p>Este sera el nombre de usuario que aparecera en tu imagen</p>
+                    <div class="username">
+                        <span>@</span>
+                        <input type="text" class="username" name="username" id="username" minlength="2" maxlength="16">
+                    </div>
+                    <input type="submit" value="Continuar" id="recibirUsuario" class="enviarImg">
+                </form>
+            <div class="info-modal">
+            </div>
+        </div>
+    </main>
+
+    <script src="js/validarUsuario.js"></script>
+</body>
+</html>

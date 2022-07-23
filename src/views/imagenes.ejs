@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/cuerpo.css">
+    <title>Imagenes | LM Gallery</title>
+</head>
+<body>
+    <header>
+        <h1>LM Galery</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/imagenes">Imagenes</a></li>
+                <li><a href="/enviar">Enviar Imagenes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="photo-container">
+            <% for(var i = 0; i < img.length; i++){ %>
+                <img src="<%= img[i].img_ruta%>" title="<%= img[i].propietario%>">
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

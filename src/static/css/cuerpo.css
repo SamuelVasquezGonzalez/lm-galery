@@ -1,0 +1,99 @@
+main{
+    width: 100%;
+    padding: 12px;
+    display: flex;
+}
+
+
+.form{
+    width: 400px;
+    padding: 17px;
+    border-radius: 12px;
+    margin: 60px auto;
+    height: auto;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s all ease;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+}
+
+.usuario{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.username{
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.username > span {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.username input{
+    font-size: 18px;
+    height: 30px;
+    margin: 7px 0;
+    border: none;
+    margin-left: 7px;
+}
+
+.username input:focus{
+    outline: none;
+}
+
+.usuario{
+    margin-bottom: 12px;
+    border-bottom: 1px solid black;
+}
+
+.usuario button{
+    height: 35px;
+    margin: 7px 0 20px 0;
+}
+
+.info-modal{
+    width: 100%;
+    text-align: center;
+}
+
+.error{
+    padding: 7px;
+    background-color: brown;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form > .enviarImg{
+    margin-top: 17px;
+    height: 35px;
+}
+
+.photo-container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.photo-container > img{
+    width: 200px;
+    margin: 5px;
+    object-fit: cover;
+}
