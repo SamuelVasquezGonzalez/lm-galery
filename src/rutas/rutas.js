@@ -21,13 +21,19 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 app.get('/', (req, res)=>{
-    res.render('../views/inicio',{
-      mensaje: "",
-      mensajeClase: "nada"
-    });
+    if(req.session.usuario){
+      res.render('../views/enviar',{
+        username: `@${req.session.usuario.username}`,
+      });
+    }else{
+      res.render('../views/inicio',{
+        mensaje: "",
+        mensajeClase: "nada"
+      });
+    }
 });
 
-app.get('/enviar', (req, res)=>{
+app.get('/enviar/', (req, res)=>{
   if(req.session.usuario){
     res.render('../views/enviar',{
       username: `@${req.session.usuario.username}`,
@@ -58,7 +64,7 @@ app.post('/imagenes', upload.single('img'), async (req, res)=>{
 })
 
 
-app.get('/imagenes', async (req, res)=>{
+app.get('/imagenes/', async (req, res)=>{
   await mysqlConnections.query('SELECT * FROM imgs', (err, result) =>{
     if(err){
       console.log("error en consulta o coneccion".bgRed)
