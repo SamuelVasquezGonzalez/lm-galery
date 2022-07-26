@@ -1,10 +1,13 @@
 header{
     width: 100%;
-    background-color: beige;
+    position: fixed;
+    background-color: white;
     padding: 12px;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgb(163, 163, 163);
 }
 
 header > nav > ul{
@@ -21,8 +24,8 @@ header > nav > ul > li > a{
     color: black;
 }
 
-header > nav > ul > li > a:hover{
-    text-decoration: underline;
+header > nav > ul > li > a > span:hover{
+    color: rgb(107, 107, 107)
 }
 
 .oculto{
@@ -37,4 +40,8 @@ header > nav > ul > li > a:hover{
 
 .bars > i{
     font-size: 24px;
+}
+
+body{
+    position: relative;
 }

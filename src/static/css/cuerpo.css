@@ -9,7 +9,7 @@ main{
     width: 400px;
     padding: 17px;
     border-radius: 12px;
-    margin: 30px auto;
+    margin: 60px auto;
     height: auto;
     box-shadow: 0 0 10px black;
     display: flex;
@@ -124,8 +124,8 @@ form > .enviarImg{
 .publicacion > img{
     width: 380px;
     height: 380px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid rgb(163, 163, 163);
+    border-bottom: 1px solid rgb(163, 163, 163);
     object-fit: cover;
 }
 

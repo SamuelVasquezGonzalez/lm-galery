@@ -1,11 +1,17 @@
 @media screen and (max-width: 474px) {
     .photo-container{
         width: 100%;
+        margin: 90px auto;
     }
 
     header{
         flex-direction: column;
     }
+
+    header > h2{
+        margin-bottom: 7px;
+    }
+
 }
 
 @media screen and (max-width: 425px){
