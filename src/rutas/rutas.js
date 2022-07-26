@@ -21,13 +21,23 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 app.get('/', (req, res)=>{
-    res.render('../views/inicio');
+    res.render('../views/inicio',{
+      mensaje: "",
+      mensajeClase: "nada"
+    });
 });
 
 app.get('/enviar', (req, res)=>{
-  res.render('../views/enviar',{
-    username: `@${req.session.usuario.username}`,
-  });
+  if(req.session.usuario){
+    res.render('../views/enviar',{
+      username: `@${req.session.usuario.username}`,
+    });
+  }else{
+    res.render('../views/inicio',{
+      mensajeClase: "error",
+      mensaje: "Ingrese un usuario"
+    });
+  }
 });
 
 app.post('/u', (req, res)=>{
