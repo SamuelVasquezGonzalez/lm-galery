@@ -28,7 +28,9 @@
             </div>
             <form action="/imagenes" method="post" enctype="multipart/form-data" id="form">
                 <p>Envia tu imagen aquí</p>
-                <input type="file" name="img" id="img">
+                <input class="title" type="text" name="titulo" placeholder="Titulo de tu imagen" required minlength="4" maxlength="80">
+                <input type="file" name="img" id="img" required>
+                <textarea class="textarea" name="descripcion"cols="20" rows="10" placeholder="Describe tu imagen aqui..." required minlength="20" maxlength="255"></textarea>
                 <input type="submit" value="Enviar" class="enviarImg">
             </form>
             <div class="info-modal">

@@ -9,7 +9,7 @@ main{
     width: 400px;
     padding: 17px;
     border-radius: 12px;
-    margin: 60px auto;
+    margin: 30px auto;
     height: auto;
     box-shadow: 0 0 10px black;
     display: flex;
@@ -78,6 +78,21 @@ form{
     flex-direction: column;
 }
 
+form > input{
+    margin: 7px 0;
+}
+
+form > .title{
+    height: 30px;
+    padding: 7px 0 7px 7px;
+}
+
+form > .textarea{
+    height: 60px;
+    resize: none;
+    padding: 7px 0 7px 7px;
+}
+
 form > .enviarImg{
     margin-top: 17px;
     height: 35px;
@@ -87,37 +102,39 @@ form > .enviarImg{
     width: 70%;
     margin: auto;
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.img-container{
-    width: 200px;
-    height: 240px;
+.publicacion{
+    width: 380px;
+    height: auto;
+    min-height: 437px;
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    box-shadow: 0 0 7px black;
+    margin: 10px auto;
+    border: 1px solid rgb(163, 163, 163);
     border-radius: 12px;
     transition: 0.3s all ease;
 }
 
-.img-container:hover{
-    transform: scale(1.08);
+.info{
+    padding: 0 0 0 10px;
+}
+
+.publicacion > img{
+    width: 380px;
+    height: 380px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    object-fit: cover;
 }
 
 .img-info{
-    padding-top: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 400px;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
-.img-container > img{
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
+
+

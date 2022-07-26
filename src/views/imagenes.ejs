@@ -24,10 +24,14 @@
     <main class="main">
         <div class="photo-container">
             <% for(var i = 0; i < img.length; i++){ %>
-                <div class="img-container">
-                    <img src="<%= img[i].img_ruta%>" title="<%= img[i].propietario%>">
+                <div class="publicacion">
+                    <div class="info">
+                        <b title="<%= img[i].propietario%>"><p><%= img[i].propietario%></p></b>
+                    </div>
+                    <img src="<%= img[i].img_ruta%>">
                     <div class="img-info">
-                        <p>Usuario: <%= img[i].propietario%></p>
+                        <p class="titulo" title="<%= img[i].titulo%>"><b><i><%= img[i].titulo%></i></b></p>
+                        <p class="descripcion" title="<%= img[i].descripcion%>"><%= img[i].descripcion%></p>
                     </div>
                 </div>
             <% } %>

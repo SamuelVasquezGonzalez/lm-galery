@@ -8,6 +8,35 @@
     }
 }
 
+@media screen and (max-width: 425px){
+    .publicacion{
+        width: 98%;
+        height: auto;
+        min-height: 437px;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        border-radius: 12px;
+        border: 1px solid rgb(163, 163, 163);
+        transition: 0.3s all ease;
+    }
+
+    .publicacion > img{
+        width: 100%;
+        height: 380px;
+        border-top: 1px solid rgb(163, 163, 163);
+        border-bottom: 1px solid rgb(163, 163, 163);
+        object-fit: cover;
+    }
+
+    .img-info{
+        width: 100%;
+        padding: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
 @media screen and (max-width: 325px){
     header > nav > ul > li{
         margin: 0 7px;

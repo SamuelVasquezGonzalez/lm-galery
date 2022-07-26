@@ -37,22 +37,24 @@ app.post('/u', (req, res)=>{
 
 app.post('/imagenes', upload.single('img'), async (req, res)=>{
   const resultado = await cloudinary.v2.uploader.upload(req.file.path);
+  const { titulo, descripcion } = req.body
   mysqlConnections.query("INSERT INTO imgs SET?",{
     img_ruta: resultado.url,
-    propietario: `@${req.session.usuario.username}`
+    propietario: `@${req.session.usuario.username}`,
+    titulo,
+    descripcion
   });
   res.redirect('imagenes');
 })
 
 
-app.get('/imagenes', (req, res)=>{
-  mysqlConnections.query('SELECT * FROM imgs', (err, result) =>{
+app.get('/imagenes', async (req, res)=>{
+  await mysqlConnections.query('SELECT * FROM imgs', (err, result) =>{
     if(err){
       console.log("error en consulta o coneccion".bgRed)
     }else{
       res.render('../views/imagenes',{
-        img: result,
-        propietario: result
+        img: result
       });
     }
   });
