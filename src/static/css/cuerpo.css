@@ -100,7 +100,7 @@ form > .enviarImg{
 
 .photo-container{
     width: 70%;
-    margin: auto;
+    margin: 60px auto;
     display: flex;
     flex-direction: column;
 }
