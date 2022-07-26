@@ -10,7 +10,7 @@ Express.js como servidor
 * Express.js
 * Mysql
 * Multer
-* Express-session
+* Cookie-session
 * Cloudinary
 * Mime-type
 * Body-parser
