@@ -51,6 +51,13 @@ app.post('/u', (req, res)=>{
     res.redirect('/enviar');
 });
 
+app.get('/cambiar', (req, res)=>{
+    res.render('../views/inicio',{
+      mensaje: "",
+      mensajeClase: "nada"
+    });
+});
+
 app.post('/imagenes', upload.single('img'), async (req, res)=>{
   const resultado = await cloudinary.v2.uploader.upload(req.file.path);
   const { titulo, descripcion } = req.body
